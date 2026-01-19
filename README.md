@@ -71,3 +71,21 @@ The dataset includes:
 
 ## 🚀 Business Impact
 This project demonstrates how predictive analytics can be used to proactively identify high-risk customers and support targeted retention efforts, ultimately reducing revenue loss.
+
+
+│
+├── data/
+│ ├── raw/ # original dataset (unchanged)
+│ └── processed/ # model-ready datasets
+│
+├── notebooks/
+│ ├── 01_business_understanding.ipynb
+│ ├── 02_data_understanding.ipynb
+│ ├── 03_eda.ipynb
+│ ├── 04_feature_engineering.ipynb
+│ ├── 05_modeling.ipynb
+│ └── 06_evaluation_and_insights.ipynb
+│
+├── src/ # reusable preprocessing and modeling logic
+├── outputs/ # trained models and artifacts
+└── README.md
