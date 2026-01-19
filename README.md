@@ -73,50 +73,12 @@ The dataset includes:
 This project demonstrates how predictive analytics can be used to proactively identify high-risk customers and support targeted retention efforts, ultimately reducing revenue loss.
 
 TELECOM-CUSTOMER-CHURN/
-│
 ├── data/
 │   ├── raw/
-│   │   └── WA_Fn-UseC_-Telco-Customer-Churn.csv
-│   │
 │   └── processed/
-│       ├── X_train_scaled.csv
-│       ├── X_test_scaled.csv
-│       ├── y_train.csv
-│       └── y_test.csv
-│
 ├── notebooks/
-│   ├── 01_business_understanding.ipynb
-│   ├── 02_data_understanding.ipynb
-│   ├── 03_eda.ipynb
-│   ├── 04_feature_engineering.ipynb
-│   ├── 05_modeling.ipynb
-│   └── 06_evaluation_and_insights.ipynb
-│
 ├── src/
-│   ├── __init__.py
-│   ├── config.py
-│   ├── data_loader.py
-│   ├── preprocessing.py
-│   ├── feature_engineering.py
-│   ├── modeling.py
-│   ├── evaluation.py
-│   └── utils.py
-│
 ├── outputs/
-│   ├── models/
-│   │   └── churn_model.pkl
-│   │
-│   ├── figures/
-│   │   ├── eda/
-│   │   │   └── churn_distribution.png
-│   │   └── evaluation/
-│   │       ├── confusion_matrix.png
-│   │       └── roc_curve.png
-│   │
-│   └── reports/
-│       └── final_insights.md
-│
-├── .gitignore
-├── LICENSE
 ├── README.md
 └── requirements.txt
+
