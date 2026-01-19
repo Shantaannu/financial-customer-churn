@@ -200,20 +200,6 @@ The goal is **practical, decision-oriented analytics**, not overclaiming.
 - Matplotlib, Seaborn
 
 No unnecessary frameworks or buzzwords.
-
----
-
-## Why This Project Is Resume-Worthy
-
-This project demonstrates:
-- end-to-end ownership,
-- strong problem framing,
-- justified modeling decisions,
-- business-aligned evaluation,
-- clean and reproducible structure.
-
-It goes beyond *“trained a model”* and focuses on **how ML supports decisions**.
-
 ---
 
 ## Possible Next Steps
