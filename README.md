@@ -93,3 +93,134 @@ TELECOM-CUSTOMER-CHURN/
 ├── README.md
 └── requirements.txt
 
+
+
+Each notebook has a **single responsibility** to avoid mixing business logic, data exploration, and modeling.
+
+---
+
+## Approach
+
+### 1. Business-First Framing
+- Defined churn as a **cost-sensitive business problem**
+- Prioritized recall for churners over raw accuracy
+- Explicitly documented assumptions before analysis
+
+---
+
+### 2. Data Understanding & Quality
+- Identified and fixed data quality issues (e.g. `TotalCharges` stored as strings)
+- Avoided premature imputation
+- Separated data validation from exploration
+
+---
+
+### 3. Exploratory Data Analysis (EDA)
+EDA was driven by **business questions**, not random plots:
+- How does tenure affect churn?
+- Do contract types influence retention?
+- Are high charges associated with churn?
+- Does service adoption reduce churn risk?
+
+---
+
+### 4. Feature Engineering
+Key decisions:
+- Removed non-informative identifiers
+- Handled missing values using business logic
+- Addressed multicollinearity between `tenure` and `TotalCharges`
+- One-hot encoded categorical features
+- Scaled numerical features for linear models
+
+---
+
+### 5. Modeling Strategy
+- **Logistic Regression** used as a transparent baseline
+- **Random Forest** selected as the final model due to:
+  - higher recall for churners,
+  - ability to capture non-linear behavior,
+  - better alignment with business priorities.
+
+Models were evaluated using:
+- Recall (churn class)
+- ROC-AUC
+- Confusion matrix analysis
+
+---
+
+### 6. Threshold Optimization
+The default probability threshold (0.5) was **not accepted blindly**.
+
+- Threshold was lowered to improve churn recall
+- Higher false positives were accepted intentionally
+- Decision justified by retention cost considerations
+
+This step bridges ML predictions with business reality.
+
+---
+
+## Key Insights
+
+- Customers with **low tenure** are significantly more likely to churn
+- **Month-to-month contracts** show the highest churn risk
+- Higher **monthly charges** increase churn probability
+- Customers using **fewer services** churn more often
+
+These insights were consistent across EDA and model outputs.
+
+---
+
+## Business Output
+
+Instead of raw predictions, customers are segmented into **risk tiers**:
+
+- **High Risk:** Immediate retention action
+- **Medium Risk:** Engagement and incentive campaigns
+- **Low Risk:** Monitoring only
+
+This enables targeted, cost-effective retention strategies.
+
+---
+
+## What This Project Does NOT Claim
+
+- ❌ Perfect prediction
+- ❌ Real-time deployment
+- ❌ Causal inference
+
+The goal is **practical, decision-oriented analytics**, not overclaiming.
+
+---
+
+## Tech Stack
+
+- Python
+- Pandas, NumPy
+- Scikit-learn
+- Matplotlib, Seaborn
+
+No unnecessary frameworks or buzzwords.
+
+---
+
+## Why This Project Is Resume-Worthy
+
+This project demonstrates:
+- end-to-end ownership,
+- strong problem framing,
+- justified modeling decisions,
+- business-aligned evaluation,
+- clean and reproducible structure.
+
+It goes beyond *“trained a model”* and focuses on **how ML supports decisions**.
+
+---
+
+## Possible Next Steps
+
+- Cost-based evaluation using retention vs churn cost
+- Model deployment as a scoring service
+- CRM integration for automated retention triggers
+- Model monitoring and drift detection
+
+
